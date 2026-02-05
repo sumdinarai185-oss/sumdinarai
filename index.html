@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday My Man</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
+      text-align: center;
+      padding: 50px 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Heart-shaped photo */
+    .heart-photo {
+      width: 250px;
+      height: 250px;
+      background: url('photo.jpg') no-repeat center center;
+      background-size: cover;
+      margin: 0 auto 30px auto;
+      clip-path: polygon(
+        50% 0%, 61% 8%, 68% 18%, 75% 30%, 80% 45%, 80% 60%, 
+        75% 75%, 68% 85%, 61% 92%, 50% 100%, 39% 92%, 32% 85%, 
+        25% 75%, 20% 60%, 20% 45%, 25% 30%, 32% 18%, 39% 8%
+      );
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 36px;
+      margin-bottom: 20px;
+      animation: sparkle 1.5s infinite;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      max-width: 600px;
+      margin: 20px auto;
+      line-height: 1.6;
+      z-index: 2;
+      position: relative;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-weight: bold;
+      color: #ff4d6d;
+      font-size: 20px;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4d6d;
+      transform: rotate(-45deg);
+      top: 100%;
+      animation: float 5s linear infinite;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4d6d;
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart:after {
+      top: 0;
+      left: 10px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateX(0) translateY(0) rotate(-45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(calc(-50px + 100px * var(--i))) translateY(-600px) rotate(-45deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes sparkle {
+      0%, 100% { color: #ff4d6d; }
+      50% { color: #ff7a99; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Heart-shaped photo -->
+  <div class="heart-photo"></div>
+
+  <!-- Sparkling title -->
+  <h1>Happy Birthday, Mr.sudip 🎉</h1>
+
+  <!-- Warm message -->
+  <p>
+    Happy Birthday, My Man! 🎉<br>
+    Before anything else, I just want to say how much you mean to me.<br>
+    I am so grateful for you having me in your life, for the way you care, for your effort, and for all the little things you do that make us so special.<br>
+    You truly earned my love, and I am so lucky to have you.
+  </p>
+
+  <!-- Signature -->
+  <div class="signature">
+    — From your wife ❤️
+  </div>
+
+  <!-- Floating hearts -->
+  <script>
+    for(let i=0;i<30;i++){
+      let heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = 3 + Math.random()*5 + 's';
+      heart.style.width = 10 + Math.random()*20 + 'px';
+      heart.style.height = heart.style.width;
+      heart.style.setProperty('--i', Math.random());
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
